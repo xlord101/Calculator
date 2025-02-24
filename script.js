@@ -1,68 +1,60 @@
-function AC(){
-
-    let display1 = document.getElementById('display1');
-    display1.value = '';
-    let display2 = document.getElementById('display2');
-    display2.value = '';
-
+// Append value to display
+function appendValue(value) {
+    document.getElementById("display1").value += value;
 }
 
-function DEL(){
-
-    let display1 = document.getElementById('display1');
-    display1.value = display1.value.slice(0, -1);
-
-    let display2 = document.getElementById('display2');
-    display2.value = display2.value.slice(0, -1);
-
+// Clear all the values
+function AC() {
+    document.getElementById("display1").value = "";
+    document.getElementById("display2").value = "";
 }
 
-function add(){
-
-    let firstNumber = Number(document.getElementById('display1').value);
-    let secondNumber = Number(document.getElementById('display2').value);
-
-    let result = firstNumber + secondNumber;
-
-    alert("Addition is : " + result);
+// Perform modulus operation
+function mod() {
+    let num1 = Number(document.getElementById("display1").value);
+    let num2 = Number(document.getElementById("display2").value);
+    let result = num1 % num2;
+    document.getElementById("display1").value = result;
 }
 
-function sub(){
-
-    let firstNumber = Number(document.getElementById('display1').value);
-    let secondNumber = Number(document.getElementById('display2').value);
-
-    let result = firstNumber - secondNumber;
-
-    alert("Substraction is : " + result);
+// Perform division
+function div() {
+    let num1 = Number(document.getElementById("display1").value);
+    let num2 = Number(document.getElementById("display2").value);
+    if (num2 !== 0) {
+        let result = num1 / num2;
+        document.getElementById("display1").value = result;
+    } else {
+        alert("Cannot divide by zero");
+    }
 }
 
-function mult(){
-
-    let firstNumber = Number(document.getElementById('display1').value);
-    let secondNumber = Number(document.getElementById('display2').value);
-
-    let result = firstNumber * secondNumber;
-
-    alert("Multiplication is : " + result);
+// Perform multiplication
+function mul() {
+    let num1 = Number(document.getElementById("display1").value);
+    let num2 = Number(document.getElementById("display2").value);
+    let result = num1 * num2;
+    document.getElementById("display1").value = result;
 }
 
-function div(){
-
-    let firstNumber = Number(document.getElementById('display1').value);
-    let secondNumber = Number(document.getElementById('display2').value);
-
-    let result = firstNumber / secondNumber;
-
-    alert("Division is : " + result);
+// Perform subtraction
+function sub() {
+    let num1 = Number(document.getElementById("display1").value);
+    let num2 = Number(document.getElementById("display2").value);
+    let result = num1 - num2;
+    document.getElementById("display1").value = result;
 }
 
-function mod(){
+// Perform addition
+function add() {
+    let num1 = Number(document.getElementById("display1").value);
+    let num2 = Number(document.getElementById("display2").value);
+    let result = num1 + num2;
+    document.getElementById("display1").value = result;
+}
 
-    let firstNumber = Number(document.getElementById('display1').value);
-    let secondNumber = Number(document.getElementById('display2').value);
-
-    let result = firstNumber % secondNumber;
-
-    alert("Modulus is : " + result);
+// Calculate the result
+function calculate() {
+    let result = eval(document.getElementById("display1").value);
+    document.getElementById("display1").value = result;
 }
